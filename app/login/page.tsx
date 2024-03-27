@@ -1,12 +1,17 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { toast } from "sonner"
 
+import { ToastAction } from "@/components/ui/toast"
+import { useToast } from "@/components/ui/use-toast"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 export default function Login() {
+    const { toast } = useToast()
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
       <div className="flex items-center justify-center py-12">
@@ -41,28 +46,27 @@ export default function Login() {
             </div> */}
             <Button
                 type="submit" className="w-full"
-                variant="outline"
-                onClick={() =>
-                toast("Event has been created", {
-                description: "Sunday, December 03, 2023 at 9:00 AM",
-                action: {
-                    label: "Undo",
-                onClick: () => console.log("Undo"),
-                    },
-                })
-                }>Login</Button>
+               variant="outline"
+      onClick={() => {
+        toast({
+          title: "Scheduled: Catch up ",
+          description: "Friday, February 10, 2023 at 5:57 PM",
+          action: (
+            <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+          ),
+        })
+      }}>Login</Button>
              <Button
-                type="submit" className="w-full"
-                variant="outline"
-                onClick={() =>
-                toast("Event has been created", {
-                description: "Sunday, December 03, 2023 at 9:00 AM",
-                action: {
-                    label: "Undo",
-                onClick: () => console.log("Undo"),
-               },
-            })
-            }> Login with Google </Button>
+        variant="outline"
+      onClick={() => {
+        toast({
+          title: "Scheduled: Catch up ",
+          description: "Friday, February 10, 2023 at 5:57 PM",
+          action: (
+            <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+          ),
+        })
+      }}> Login with Google </Button>
           </div>
           {/* <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}
