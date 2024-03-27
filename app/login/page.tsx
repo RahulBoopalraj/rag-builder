@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -38,12 +39,36 @@ export default function Login() {
               </div>
               <Input id="password" type="password" required />
             </div> */}
-            <Button type="submit" className="w-full">
-              Login
-            </Button>
-            <Button variant="outline" className="w-full">
-              Login with Google
-            </Button>
+             <Button
+                type="submit" className="w-full"
+                variant="outline"
+                onClick={() =>
+                toast("Event has been created", {
+                description: "Sunday, December 03, 2023 at 9:00 AM",
+                action: {
+                    label: "Undo",
+                onClick: () => console.log("Undo"),
+               },
+          })
+      }
+    >
+      Login
+    </Button>
+             <Button
+                type="submit" className="w-full"
+                variant="outline"
+                onClick={() =>
+                toast("Event has been created", {
+                description: "Sunday, December 03, 2023 at 9:00 AM",
+                action: {
+                    label: "Undo",
+                onClick: () => console.log("Undo"),
+               },
+          })
+      }
+    >
+      Login with Google
+    </Button>
           </div>
           {/* <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}
