@@ -9,16 +9,17 @@ import { useToast } from "@/components/ui/use-toast"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Separator } from "@/components/ui/separator"
 
 export default function Login() {
     const { toast } = useToast()
   return (
-    <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
+    <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2 xl:min-h-screen">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
-          <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">Login</h1>
-            <p className="text-balance text-muted-foreground">
+          <div className="grid gap-2 text-center mb-3">
+            <h1 className="text-3xl font-bold">Welcome</h1>
+            <p className="text-sm text-muted-foreground">
               Enter your email below to login to your account
             </p>
           </div>
@@ -32,48 +33,37 @@ export default function Login() {
                 required
               />
             </div>
-            {/* <div className="grid gap-2">
-              <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  href="/forgot-password"
-                  className="ml-auto inline-block text-sm underline"
-                >
-                  Forgot your password?
-                </Link>
-              </div>
-              <Input id="password" type="password" required />
-            </div> */}
             <Button
                 type="submit" className="w-full"
-               variant="outline"
-      onClick={() => {
-        toast({
-          title: "Scheduled: Catch up ",
-          description: "Friday, February 10, 2023 at 5:57 PM",
-          action: (
-            <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
-          ),
-        })
-      }}>Login</Button>
+                variant="outline"
+                onClick={() =>
+                toast("Event has been created", {
+                description: "Sunday, December 03, 2023 at 9:00 AM",
+                action: {
+                    label: "Undo",
+                onClick: () => console.log("Undo"),
+                    },
+                })
+                }>Login</Button>
              <Button
-        variant="outline"
-      onClick={() => {
-        toast({
-          title: "Scheduled: Catch up ",
-          description: "Friday, February 10, 2023 at 5:57 PM",
-          action: (
-            <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
-          ),
-        })
-      }}> Login with Google </Button>
+                type="submit" className="w-full"
+                variant="outline"
+                onClick={() =>
+                toast("Event has been created", {
+                description: "Sunday, December 03, 2023 at 9:00 AM",
+                action: {
+                    label: "Undo",
+                onClick: () => console.log("Undo"),
+               },
+            })
+            }> Login with Google </Button>
           </div>
-          {/* <div className="mt-4 text-center text-sm">
-            Don&apos;t have an account?{" "}
+          <div className="mt-4 text-center text-sm">
+            By signing in you agree with our{" "}
             <Link href="#" className="underline">
-              Sign up
+              terms and conditions
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="hidden bg-muted lg:block">
