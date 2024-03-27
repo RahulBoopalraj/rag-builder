@@ -40,7 +40,9 @@ export default function Home() {
             />
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">AI-Powered Chatbot Generator</h1>
+                <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                  Build AI-powered chatbots without writing a single line of code
+                </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                   Create intelligent chatbots without writing a single line of code. Engage your customers with automated
                   conversational experiences. Let your imagination flow while we handle the technology.
