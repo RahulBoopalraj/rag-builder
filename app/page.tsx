@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Dashboard } from "./pages/Dashboard/page";
 
 export default function Home() {
   return (
     <div>
-      <Dashboard />
-    </div>  );
+      <h1>Test</h1>
+    </div>  
+  );
 }
