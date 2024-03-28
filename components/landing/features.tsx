@@ -25,7 +25,7 @@ export default function Features() {
             alt="Image"
             className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
             height="550"
-            src="/landing.png"
+            src="/support.png"
             width="550"
           />
           <div className="flex flex-col justify-center space-y-4">
