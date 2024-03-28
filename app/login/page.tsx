@@ -18,45 +18,16 @@ export default function Login() {
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center mb-3">
-            <h1 className="text-3xl font-bold">Welcome</h1>
-            <p className="text-sm text-muted-foreground">
-              Enter your email below to login to your account
-            </p>
+            <h1 className="text-3xl font-bold"> Welcome </h1>
+            <p className="text-sm text-muted-foreground"> Enter your email below to login to your account </p>
           </div>
           <div className="grid gap-4">
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
+              <Input id="email" type="email" placeholder="m@example.com" required />
             </div>
-            <Button
-                type="submit" className="w-full"
-                variant="outline"
-                onClick={() =>
-                toast("Event has been created", {
-                description: "Sunday, December 03, 2023 at 9:00 AM",
-                action: {
-                    label: "Undo",
-                onClick: () => console.log("Undo"),
-                    },
-                })
-                }>Login</Button>
-             <Button
-                type="submit" className="w-full"
-                variant="outline"
-                onClick={() =>
-                toast("Event has been created", {
-                description: "Sunday, December 03, 2023 at 9:00 AM",
-                action: {
-                    label: "Undo",
-                onClick: () => console.log("Undo"),
-               },
-            })
-            }> Login with Google </Button>
+            <Button>Login</Button>
+            <Button>Login with Google</Button>
           </div>
           <div className="mt-4 text-center text-sm">
             By signing in you agree with our{" "}
