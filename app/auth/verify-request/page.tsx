@@ -16,7 +16,7 @@ export default function Dashboard() {
 
                         <h1 className="text-3xl font-bold mb-3">Check Your Email</h1>
                         <p className="text-balance text-muted-foreground">
-                            Your magic link awaits in your inbox! Take a peek there, and don't forget to check your spam folder too.
+                            Your magic link awaits in your inbox! Take a peek there, and don&apos;t forget to check your spam folder too.
                         </p>
                     </div>
                 </div>

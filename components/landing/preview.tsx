@@ -8,7 +8,7 @@ export default function Preview() {
           Lights, Camera, Action!
         </div>
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-          Here&apos;s How It Works!
+          Watch It In Action!
         </h2>
         <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
           Watch a quick demo of how RAG Builder functions.
