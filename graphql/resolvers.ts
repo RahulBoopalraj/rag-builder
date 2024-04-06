@@ -6,19 +6,45 @@ interface IContext {
     req: NextRequest,
     user: Session | null
 }
-
 const resolvers = {
     Query: {
-        model: (parent: any, args: any, ctx: IContext, info: any) => {
-            if (ctx.user === null) return []
+        model: async (parent: any, args: any, ctx: IContext, info: any) => {
+            if (!ctx.user || !ctx.user.user) {
+                return [];
+            }
 
-            prisma.model.findMany({
-                select: {
-                    userId: ctx.user.user?.id
-                }
-            })
+            try {
+                const models = await prisma.model.findMany({
+                    where: {
+                        userId: ctx.user.user.id
+                    },
+                });
+
+                return models;
+            } catch (error) {
+                console.error("Error fetching models:", error);
+                throw error;
+            }
+        },
+        datasource: async (parent: any, args: any, ctx: IContext, info: any) {
+            if (!ctx.user || !ctx.user.user) {
+                return [];
+            }
+
+            try {
+                const models = await prisma.dataSource.findMany({
+                    where: {
+                        userId: ctx.user.user.id
+                    },
+                });
+
+                return models;
+            } catch (error) {
+                console.error("Error fetching models:", error);
+                throw error;
+            }
         }
     },
 };
 
-export { resolvers }
+export { resolvers };

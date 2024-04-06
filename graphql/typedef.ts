@@ -62,6 +62,12 @@ type Account {
     model: [Model]
     datasource: [DataSource]
   }
+
+  type Mutation {
+    createDataSource(
+      name: String!
+    )
+  }
 `;
 
 export { typeDefs }
