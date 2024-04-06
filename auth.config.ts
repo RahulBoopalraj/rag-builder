@@ -35,6 +35,17 @@ const authOptions: AuthOptions = {
         error: '/auth/error',
         verifyRequest: '/auth/verify-request',
         newUser: '/auth/login'
+    },
+    callbacks: {
+        async session({ session, token, user }) {
+
+            if (session.user) {
+                session.user.id = user.id
+                session.user.emailVerified = user.emailVerified
+            }
+
+            return session
+        }
     }
 }
 

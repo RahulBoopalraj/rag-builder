@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from 'sonner';
+import Providers from "./providers";
 
 const siteFont = Inter({ subsets: ["latin"] });
 
@@ -19,10 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={siteFont.className}>
-        <TooltipProvider>
+        <Providers>
           {children}
-          <Toaster />
-        </TooltipProvider>
+        </Providers>
       </body>
     </html>
   );
