@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
 
 const typeDefs = gql`
+scalar JSON
 
 type User {
   id: ID
@@ -64,7 +65,9 @@ type User {
   }
 
   type Mutation {
-    createDataSource(): DataSource
+    createDataSource(
+      name: String
+    ): DataSource
     createModel(
       name: String
     ): Model

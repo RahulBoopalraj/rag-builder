@@ -39,9 +39,8 @@ const authOptions: AuthOptions = {
     callbacks: {
         async session({ session, token, user }) {
 
-            if (session.user) {
-                session.user.id = user.id
-                session.user.emailVerified = user.emailVerified
+            if (session.user && token.sub) {
+                session.user.id = token.sub
             }
 
             return session
