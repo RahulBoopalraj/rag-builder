@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button"
+import { redirectToCheckout } from "@/lib/checkout";
 import { useState } from "react";
 
 export default function Pricing() {
@@ -56,7 +57,7 @@ export default function Pricing() {
             <li>4-7 days turnaround time</li>
             <li>Pause or cancel anytime</li>
           </ul>
-          <Button className="w-full">Buy Now</Button>
+          <Button onClick={() => redirectToCheckout(50)} className="w-full">Buy Now</Button>
           <p className="text-gray-500 text-xs text-center mt-4">Questions?</p>
         </div>
         <div className="max-w-md p-6 bg-white rounded-lg border border-purple-500 shadow-md relative">
