@@ -12,8 +12,8 @@ type User {
   models: [Model]
 }
 
-type Account {
-  id: ID
+  type Account {
+    id: ID
     type: String
     provider: String
     providerAccountId: String
@@ -40,10 +40,10 @@ type Account {
     name: String
     type: String
     config: JSON
-    modelId: ID
+    modelId: [ID]
     userId: ID
     user: User
-    model: Model
+    model: [Model]
   }
   
   type Model {
@@ -64,9 +64,18 @@ type Account {
   }
 
   type Mutation {
-    createDataSource(
-      name: String!
-    )
+    createDataSource(): DataSource
+    createModel(
+      name: String
+    ): Model
+    updateModel(
+      id: ID
+      agentInfo: JSON
+      modelSettings: JSON
+      knowledgeBase: [ID]
+      vectorDatabaseURI: String
+      databaseConfig: JSON
+    ): Model
   }
 `;
 
