@@ -1,21 +1,28 @@
-import { authOptions } from "@/auth.config";
-import { NextApiRequest, NextApiResponse } from "next";
-import { getServerSession } from "next-auth/next";
+import { unAuthenticated } from "@/lib/errors";
+import { serverAuth } from "@/lib/serverAuth";
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
-    const session = await getServerSession(req, res, authOptions);
+export async function GET(req: Request) {
+    const session = await serverAuth();
 
-    if (!session) {
-        res.status(401).json({
-            "error": true,
-            "title": "User Not Authenticated",
-            "description": "You need to login to access this api"
-        })
-        return;
-    }
+    if (!session) { return unAuthenticated; }
 
-    res.status(200).json({
+    return Response.json({
         "hello": "world"
-    })
+    }, {
+        status: 200
+    });
+}
 
+export async function POST(req: Request) {
+    const session = await serverAuth();
+
+    // if (!session) { return unAuthenticated }
+
+    const res = await req.json()
+
+    return Response.json({
+        "status": "success",
+    }, {
+        status: 200
+    });
 }

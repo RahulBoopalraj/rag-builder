@@ -1,6 +1,5 @@
 "use client";
 
-
 import Link from "next/link";
 import { useState } from "react";
 import Analytics from "../analytics/page";
@@ -104,7 +103,7 @@ export default function Dashboard() {
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       
         <Sidebar />
-  
+ 
       <div className="flex flex-col">
 
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
@@ -211,7 +210,6 @@ export default function Dashboard() {
                               className="min-h-[9.5rem]"
                             />
                           </div>
-
                           <AlertDialogFooter>
                             {" "}
                             <AlertDialogCancel>Cancel</AlertDialogCancel>
@@ -372,3 +370,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
